@@ -1,0 +1,53 @@
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/searchToolBar"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/gray_border">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/ivBackIcon"
+                    android:layout_width="35dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginTop="11dp"
+                    android:layout_marginEnd="15dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginBottom="14dp"
+                    android:src="@drawable/ic_backblue" />
+
+                <EditText
+                    android:id="@+id/searchcontact"
+                    android:layout_width="330dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="38dp"
+                    android:layout_marginLeft="3dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginBottom="13dp"
+                    android:layout_toRightOf="@id/ivBackIcon"
+                    android:background="@null"
+                    android:hint="Find Contacts"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+        </android.support.v7.widget.Toolbar>
+
+    </android.support.design.widget.AppBarLayout>
+</merge>

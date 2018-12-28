@@ -12,6 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/relLayout1">
+            <include layout="@layout/snippet_searchtoolbar"/>
             <include layout="@layout/snippet_viewtoolbar"/>
         </RelativeLayout>
 
@@ -49,6 +50,7 @@
         app:elevation="10dp"
         app:fabSize="normal"
         app:backgroundTint="@color/colorPrimary"
-        android:src="@drawable/ic_add"/>
+        android:src="@drawable/ic_add"
+        android:id="@+id/fabAddbutton"/>
 
 </android.support.design.widget.CoordinatorLayout>
