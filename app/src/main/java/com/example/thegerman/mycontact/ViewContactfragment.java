@@ -24,7 +24,7 @@ public class ViewContactfragment extends Fragment {
     private static final String TAG = "ViewContactfragment";
     private static final int STANDARD_APPBAR = 0;
     private static final int SEARCH_APPBAR = 1;
-    private String testImageUrl = "";
+    private String testImageUrl = "https://app-1520876794.000webhostapp.com/img/joz.jpg";
     private CustumListAdapter custumListAdapter;
     private ListView contactList;
 
