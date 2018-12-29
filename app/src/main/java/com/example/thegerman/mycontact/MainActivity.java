@@ -4,12 +4,16 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import com.example.thegerman.mycontact.utils.UniversalImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoader;
+
 public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        initImageLoader();
         initialize();
     }
 
@@ -25,5 +29,11 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.fragment_container,fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    private void initImageLoader(){
+        UniversalImageLoader universalImageLoader = new UniversalImageLoader(MainActivity.this);
+        ImageLoader.getInstance().init(universalImageLoader.imageLoaderConfiguration());
+
     }
 }

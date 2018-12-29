@@ -12,12 +12,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.ImageView;
+import android.widget.ListView;
 import android.widget.Toast;
+
+import com.example.thegerman.mycontact.models.Contacts;
+import com.example.thegerman.mycontact.utils.CustumListAdapter;
+
+import java.util.ArrayList;
 
 public class ViewContactfragment extends Fragment {
     private static final String TAG = "ViewContactfragment";
     private static final int STANDARD_APPBAR = 0;
     private static final int SEARCH_APPBAR = 1;
+    private String testImageUrl = "";
+    private CustumListAdapter custumListAdapter;
+    private ListView contactList;
 
     private int mAppbarState;
     private AppBarLayout viewContactbar,searchBar;
@@ -28,6 +37,9 @@ public class ViewContactfragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_view_contact,container,false);
         viewContactbar = view.findViewById(R.id.contactToolBar);
         searchBar = view.findViewById(R.id.searchToolBar);
+        contactList = view.findViewById(R.id.contactview);
+
+        setupContactList();
         // Floatin action button
         FloatingActionButton floatingActionButton =  view.findViewById(R.id.fabAddbutton);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
@@ -54,6 +66,33 @@ public class ViewContactfragment extends Fragment {
         });
 
         return view;
+    }
+
+    private void setupContactList(){
+        final ArrayList<Contacts> contacts =  new ArrayList<>();
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+        ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+        contacts.add(new Contacts("Quince Joz-Bruer","(509) 36 72 8422","quincejozbruer@gmail.com"
+                ,"Mobile","03,Village vernet",testImageUrl));
+
+        custumListAdapter = new CustumListAdapter(getActivity(),R.layout.contact_list_item,contacts,"https://");
+        contactList.setAdapter(custumListAdapter);
     }
 
     /**
